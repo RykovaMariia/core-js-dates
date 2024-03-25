@@ -299,7 +299,6 @@ function getWorkSchedule(period, countWorkDays, countOffDays) {
   }
 
   return result.map((date) => {
-    date.setDate(date.getDate() + 1);
     return `${String(date.getDate()).padStart(2, '0')}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getFullYear()}`;
   });
 }
