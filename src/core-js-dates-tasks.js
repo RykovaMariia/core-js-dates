@@ -239,10 +239,10 @@ function getWeekNumberByDate(date) {
  * Date(2023, 1, 1) => Date(2023, 9, 13)
  */
 function getNextFridayThe13th(date) {
-  date.setUTCDate(12);
+  date.setDate(13);
 
-  while (date.getUTCDay() !== 4) {
-    date.setUTCMonth(date.getUTCMonth() + 1);
+  while (date.getDay() !== 5) {
+    date.setMonth(date.getMonth() + 1);
   }
   return date;
 }
