@@ -216,17 +216,15 @@ function getCountWeekendsInMonth(month, year) {
  */
 function getWeekNumberByDate(date) {
   const firstDay = new Date(date.getUTCFullYear(), 0);
+
   const lastDayFirstWeek =
     firstDay.getUTCDay() === 0
       ? firstDay
-      : firstDay.setDate(7 - firstDay.getUTCDay());
+      : firstDay.setDate(8 - firstDay.getUTCDay());
 
   const result = Math.ceil((date - lastDayFirstWeek) / 1000 / 60 / 60 / 24 / 7);
 
-  if (firstDay.getUTCDay() !== 0) {
-    return result + 1;
-  }
-  return result;
+  return result + 1;
 }
 
 /**
